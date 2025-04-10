@@ -1,3 +1,4 @@
+// Atividade
 let nome = `Amanda`;
 let idade = 16;
 
@@ -20,4 +21,3 @@ let altura = 1.70
 let peso = 23
 let soma = (peso / (altura*altura)).toFixed(2);
 console.log(soma);
-
