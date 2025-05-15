@@ -20,7 +20,7 @@ let ProdutoEmbalado = {
 console.log(`O produto ${ProdutoEmbalado.nome},
 da categoria ${ProdutoEmbalado.categoria},
 pesando ${ProdutoEmbalado.peso} Kg.
-Está à venda por R$ ${ProdutoEmbalado.preco}.`)
+Está à venda por R$ ${ProdutoEmbalado.preco.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}.`)
 
 //3
 class Imovel {
