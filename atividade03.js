@@ -1,14 +1,14 @@
 //1
 let apartamento = {
     quartos: 2,
-    tipo: "apartamento",
-    endereco: "Avenida Principal, 456 - Centro",
+    tipo: 'apartamento',
+    endereco: 'Avenida Principal, 456 - Centro',
     andar: 7
 }
 
 console.log(`Apartamento com ${apartamento.quartos} quartos, 
-localizado no ${apartamento.andar} andar da ${apartamento.endereco}.`);
-
+localizado no ${apartamento.andar} andar.
+Localizado em  ${apartamento.endereco}.`);
 //2
 let ProdutoEmbalado = {
     nome:"Laptop HP",
@@ -17,17 +17,21 @@ let ProdutoEmbalado = {
     preco: 3500.00
 }
 
-console.log(`O produto ${ProdutoEmbalado.nome}, da categoria ${ProdutoEmbalado.categoria}, pesando ${ProdutoEmbalado.peso} Kg, está à venda por R$ ${ProdutoEmbalado.preco}.`)
+console.log(`O produto ${ProdutoEmbalado.nome},
+da categoria ${ProdutoEmbalado.categoria},
+pesando ${ProdutoEmbalado.peso} Kg.
+Está à venda por R$ ${ProdutoEmbalado.preco}.`)
 
 //3
 class Imovel {
-constructor(quartos, tipo, endereco) {
+constructor(quartos, tipos, endereco) {
     this.quartos = quartos
-    this.tipo = tipo
+    this.tipos = tipos
     this.endereco = endereco
 }
 exibirInformacoes() {
-    return `${this.tipo} com ${this.quartos} quartos, localizado na ${this.endereco}`
+    return `${this.tipo} com ${this.quartos} quartos,
+localizado na ${this.endereco}`
 }
 }
 const casa = new Imovel(4, "casa", "Rua da Amizade, 789 - Bairro Alegre")
