@@ -1,10 +1,17 @@
 import rl from 'readline-sync';
 
-let num = rl.questionInt("iNFORME UM NUMERO PARA OBTER A TABUADA: ");
+//1
+const numeroAleatorio = Math.floor(Math.random() * 100) + 1;
+let palpite;
 
-let cont = 1;
+do {
+    palpite = rl.questionInt("Tente Adivar quantas pessoas te odeiam no mundo (entre 1 e 100): ")
+    if (palpite === numeroAleatorio) {
+        console.log("Parabéns Você adivinhou")
+    } else if (palpite < numeroAleatorio){
+        console.log("Um pouco mais de pessoas, tenta de novo") 
+    }else{
+        console.log("Não é pra tanto, abaixa um pouquinho")
+    }
 
-while(contador <= 10)  {
-    console.log(${num})
-
-}
+}while (palpite !== numeroAleatorio);
