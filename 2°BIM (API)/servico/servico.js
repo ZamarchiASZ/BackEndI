@@ -1,4 +1,4 @@
-import fatosHistoricos from "../Dados/fatos.js";
+//import fatosHistoricos from "../Dados/fatos.js";
 
 function servicoBuscarFatoPorAno(ano) {
     if (ano < 1920 || ano > 2020) {
