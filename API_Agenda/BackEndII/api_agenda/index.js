@@ -1,31 +1,36 @@
-import express from "express";
-import { buscaContatoPorId, buscaTodosContatos } from "./servicos/buscaServico.js";
+import express from 'express'
+import { buscarContatoPorId, bsucarTodosContatos } from './servico/buscaServico.js';
 
-const app = new express();
-const port = 3000;
+const app = new express()
 
+app.get('/contatos', async (req, res) => {
+    const contatos = await bsucarTodosContatos();
+    res.status(200).json(contatos)
+});
 
 app.get('/contatos/:id', async (req, res) => {
     const id = req.params.id;
 
     if (id) {
-        if (isNaN(id)) {
-            const contato = await buscaContatoPorId(id);
+        if (!isNaN(id)) {
+            const contato = await buscarContatoPorId(id);
             if (contato.length > 0) {
-                res.status(200).json(contato)
+                res.status(200).json(contato[0])
             } else {
-                res.status(404).send("Contato não encontrado!");
+                res.status(404).send('contato não encontrado')
             }
         } else {
-            res.status(400).send("Requisição Inválida!")
+            res.status(400).send('requisição inválida')
         }
     } else {
-        const contatos = await buscaTodosContatos();
-        res.status(200).son(contatos)
-    }
-})
+        const contatos = await bsucarTodosContatos();
+        res.status(200).json(contatos);
 
-app.listen(prompt, () => {
+    }
+}
+)
+
+app.listen(3000, () => {
     let data = new Date()
-    console.log("Servirdor iniciado em:" + data)
+    console.log('O servidor foi iniciado na porta 3000 em ' + data)
 })

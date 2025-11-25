@@ -2,9 +2,9 @@ import mysql from 'mysql2/promise';
 
 const pool = mysql.createPool({
     host: 'localhost',
-    user: 'root',
+    user: 'agenda2a',
     password: 'A503814@',
-    database: 'agenda2a'
+    database: 'agenda'
 });
 
-export default pool
+export default pool;
