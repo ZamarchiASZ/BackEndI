@@ -25,7 +25,12 @@ function validaNome(nome) {
     
     if (contatoValido) {
     return {status : true, mensagem: ''}
-    } else {
-    return{status: false, mensagem: 'Nome/Telefone/Email inválido(s)'}
+    } else if (!nomeValido) {
+        return{status: false, mensagem: 'Nome Inválido'};
+    }else if (!telefoneValido) {
+        return{status: false, mensagem: 'Telefone Inválido'};
+    }else if (!emailValido) {
+        return{status: false, mensagem: 'Email Inválido'};
     }
-    }
+
+}
